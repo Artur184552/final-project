@@ -1,13 +1,578 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body * {
+    box-sizing: border-box;
 }
+
+header {
+    height: 100px;
+    color: #FFFFFF;
+    background: linear-gradient(77.49deg, #3f4fcd 41.91%, #2f6295 113.32%);
+} 
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 41px;
+    padding-top: 0px;
+
+    font-family: 'Lato';
+    font-weight: 900;
+    font-size: calc(20px + 5 * (100vw / 1475));
+    line-height: 22px;
+    text-align: center;
+    font-style: normal;
+}
+
+.header-link:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    padding-top: 39px;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.header-link {
+    padding-top: 40px;
+    color: #c2c2c2;
+    text-decoration: none;
+}
+
+main {
+    min-height: 1000px;
+    /* background: linear-gradient(77.49deg, #4172a2 41.91%, #444ca3 113.32%); */
+    background: radial-gradient(circle, rgb(12, 12, 12), rgb(40, 40, 42))
+}
+
+.active-header-link {
+    text-decoration: underline;
+    color: #F0F0F0;
+}
+
+footer {
+    height: 100px;
+    background: linear-gradient(77.49deg, #3f4fcd 41.91%, #2f6295 113.32%);
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    font-family: 'HK Grotesk';
+    font-weight: 300;
+    font-size: calc(10px + 5 * (100vw / 1475));    
+    line-height: 19px;
+    color: #ffffff;
+    font-style: normal;
+}
+
+.footer-link:hover {
+    cursor: pointer;
+    transition: 1s;
+    text-decoration: underline;
+}
+
+.footer-left, .footer-middle, .footer-right {
+    display: flex;
+    flex-direction: column;
+    padding-top: 23px;
+}
+
+.feedback, .support, .cooperation {
+    padding-top: 15px;
+}
+
+
+
+
+
+/* -------  HomePage  ----------- */
+
+.homepage {
+    background-image: url('./images/bicycle-background.jpg');
+    background-size: cover;
+    height: max-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+}
+
+.homepage-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.homepage-container {
+    position: relative;
+    z-index: 1;
+}
+
+.service-info-header {
+    font-family: 'Lato';
+    font-weight: 900;
+    font-size: calc(40px + 5 * (100vw / 1475));
+    line-height: 80px;
+    background-color: #ffffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: normal;
+}
+
+.about-service {
+    width: calc(50px + 1000 * (100vw / 1475));
+    padding-right: 50px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: calc(20px + 5 * (100vw / 1475));
+    line-height: calc(30px + 10 * (100vw / 1475));
+    color: #dddcdc;
+    font-style: normal;
+}
+
+.homepage-report {
+    display: flex;
+    flex-direction: column;
+    width: calc(200px + 300 * (100vw / 1475));
+    height: calc(550px - 100 * (100vw / 1475));
+    margin-top: 100px;
+    margin-bottom: 125px;
+    border-radius: 20px;
+    border: solid #8894ed 2px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.homepage-report-header {
+    margin-left: calc(15px + 15 * (100vw / 1475));
+    margin-right: calc(15px + 15 * (100vw / 1475));
+    font-weight: 400;
+    font-size: calc(30px + 5 * (100vw / 1475));
+    line-height: 48px;
+    color: #8894ed;
+    font-style: normal;
+    font-family: 'Lato';
+}
+
+.homepage-report-description {
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: (25px + 10 * (100vw / 1475)); 
+    line-height: 25px;
+    font-style: normal;
+    color: #FFFFFF;
+    width: calc(150px + 200 * (100vw / 1475));
+    margin-left: 30px;
+}
+
+.to-report-button {
+    margin-top: 40px;
+    margin-left: 30px;
+    height: 70px;
+    width: 200px;
+    background: linear-gradient(77.49deg, #3f4fcd 41.91%, #2f6295 113.32%);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 1px 1px #0044ff;
+
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: calc(15px + 5 * (100vw / 1475));
+    line-height: 24px;
+    text-align: center;
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+.to-report-button:hover {
+    cursor: pointer;
+}
+
+
+
+/* ----------  NotFoundPage  ------------------- */
+
+.not-found-description-header {
+    margin: 0;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: calc(50px + 20 * (100vw / 1475));
+    color: #a8a8a8;
+}
+
+.not-found-description {
+    padding-top: calc(50px + 150 * (100vw / 1475));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: max-content;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.return-to-homepage-btn {
+    height: 70px;
+    width: calc(200px + 200 * (100vw / 1475));
+    background: #6073B9;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 1px 1px #0044ff;
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: calc(15px + 5 * (100vw / 1475));
+    line-height: 24px;
+    text-align: center;
+    font-style: normal;
+    color: #dadada;
+}
+
+.return-to-homepage-btn:hover {
+    cursor: pointer;
+}
+
+.return-to-homepage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: calc(50px + 100 * (100vw / 1475));
+}
+
+
+
+
+
+/* Сообщения о кражах--------------------------- */
+
+.report-theft {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.report-form, .registration-form, .authorisation-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(180px + 600 * (100vw / 1475));
+    height: calc(370px + 65 * (100vw / 1475));
+    background-color: #343434;
+    border-radius: 10px;
+    border: solid #8894ed 1.5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.report-form-left-side, .report-form-right-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.report-form-left-side{
+    margin-left: 10px;
+}
+
+.report-form-right-side {
+    margin-right: 10px;
+}
+
+.form-element {
+    border-radius: 8px;
+    height: calc(28px + 12 * (100vw / 1475));
+    width: calc(85px + 250 * (100vw / 1475));
+    border: none;
+    margin-top: 10px;
+    margin-left: 10px;
+
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: calc(13px + 5 * (100vw / 1475));
+    text-align: center;
+    font-style: normal;
+}
+
+.form-element:hover {
+    cursor: pointer;
+}
+
+.report-textarea {
+    height: calc(50px + 50 * (100vw / 1475));
+    margin-top: 10px;
+}
+
+.report-button, .registration-button, .authorisation-button {
+    margin-top: 30px;
+    background: linear-gradient(77.49deg, #3f4fcd 41.91%, #2f6295 113.32%);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 1px 1px #0044ff;
+
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: calc(15px + 5 * (100vw / 1475));
+    line-height: 24px;
+    text-align: center;
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+.report-theft-form-heading {
+    color: #ffffff;
+    margin-top: calc(0px + 50 * (100vw / 1475));
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: calc(30px + 10 * (100vw / 1475));
+    line-height: 80px;
+    font-style: normal;
+    margin-bottom: -5px;
+}
+
+
+.report-theft-bottom-side {
+    padding-bottom: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.report-theft-bottom-heading {
+    margin-top: 150px;
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: calc(30px + 10 * (100vw / 1475));
+    line-height: 50px;
+    font-style: normal;
+    color: #FFFFFF;
+    padding-bottom: 30px;
+}
+
+.single-report-message {
+    width: calc(200px + 300 * (100vw / 1475));
+    height: 50px;
+    background-color: #343434;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: calc(13px + 7 * (100vw / 1475));
+    font-style: normal;
+}
+
+.single-report-message:hover, .single-staff-element:hover {
+    cursor: pointer;
+}
+
+.single-report-message-name {
+    padding-left: 10px;
+}
+
+.report-message-delete {
+    padding-right: 10px;
+    color: rgb(255, 0, 0);
+}
+
+.report-message-delete:hover {
+    cursor: pointer;
+}
+
+.report-name-span{
+    color: #7c7d7e;
+    font-size: smaller;
+}
+
+
+
+
+
+
+
+/* staffPage------------------------ */
+
+.staffpage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single-staff-element-heading, .registration-form-heading, .authorisation-form-heading {
+    margin: 0;
+    padding-top: calc(20px + 30 * (100vw / 1475));
+
+    font-family: 'Lato';
+    font-weight: 500;
+    font-size: calc(30px + 10 * (100vw / 1475));
+    line-height: 40px;
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+.single-staff-element-heading {
+    padding-bottom: 50px;
+}
+
+.single-staff-element {
+    width: calc(200px + 300 * (100vw / 1475));
+    height: 50px;
+    background-color: #343434;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: calc(13px + 7 * (100vw / 1475));
+    line-height: 80px;
+    font-style: normal;
+}
+
+.single-staff-element-name {
+    margin-left: 10px;
+}
+
+.single-staff-element-delete {
+    margin-right: 10px;
+    color: rgb(255, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* registration and authorisation--------------------------- */
+
+.registration-form, .authorisation-form {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    width: calc(150px + 220 * (100vw / 1475));
+    height: calc(500px + 30 * (100vw / 1475));
+}
+
+.authorisation-form {
+    height: calc(250px + 35 * (100vw / 1475));
+}
+
+.registration-page-form-container, .authorisation-page-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
+
+.registration-form-element, .authorisation-form-element {
+    margin-left: 10px;
+    width: calc(130px + 215 * (100vw / 1475));}
+
+.form-element-label {
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: calc(13px + 7 * (100vw / 1475));
+    line-height: 40px;
+    font-style: normal;
+    color: #a2a2a2;
+}
+
+.form-element-label-description {
+    margin-left: 10px;
+    margin-bottom: -15px;
+}
+
+.red-star {
+    color: rgb(255, 0, 0);
+}
+
+.form-element-label {
+    margin-top: 5px;
+}
+
+.registration-button, .authorisation-button {
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 620px) {
+    .header-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 0px;
+        height: 150px;
+    }
+
+    header {
+        height: 150px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Авторизация и выход----------------------------------------------- */
+
+.profile-authorisation {
+    display: none;
+}
+
+.profile-exit {
+    display: none;
+}
+
+/* Авторизация и выход----------------------------------------------- */
